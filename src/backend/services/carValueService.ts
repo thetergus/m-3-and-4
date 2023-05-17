@@ -1,11 +1,17 @@
-let carValues = [];
+interface CarValue {
+  id: number;
+  model: string;
+  year: number;
+}
 
-exports.getCarValues = () => {
+let carValues: CarValue[] = [];
+
+export const getCarValues = (): CarValue[] => {
   return carValues;
 };
 
-exports.createCarValue = (model, year) => {
-  const newCarValue = {
+export const createCarValue = (model: string, year: number): CarValue => {
+  const newCarValue: CarValue = {
     id: carValues.length + 1,
     model,
     year,
@@ -16,11 +22,11 @@ exports.createCarValue = (model, year) => {
   return newCarValue;
 };
 
-exports.getCarValueById = (carValueId) => {
+export const getCarValueById = (carValueId: number): CarValue | undefined => {
   return carValues.find((t) => t.id === carValueId);
 };
 
-exports.calculateCarValue = (model, year) => {
+export const calculateCarValue = (model: string, year: number): number => {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   let carValue = 0;
   for (let i = 0; i < model.length; i++) {

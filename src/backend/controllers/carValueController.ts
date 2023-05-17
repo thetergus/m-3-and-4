@@ -1,18 +1,19 @@
-const carValueService = require("../services/carValueService");
+import * as carValueService from "../services/carValueService";
+import { Request, Response } from "express";
 
-exports.getCarValues = (req, res) => {
+export const getCarValues = (req: Request, res: Response) => {
   const carValues = carValueService.getCarValues();
   res.send(carValues);
 };
 
-exports.createCarValue = (req, res) => {
+export const createCarValue = (req: Request, res: Response) => {
   const model = req.body.model;
   const year = req.body.year;
   const newCarValue = carValueService.createCarValue(model, year);
   res.send(newCarValue);
 };
 
-exports.getCarValueById = (req, res) => {
+export const getCarValueById = (req: Request, res: Response) => {
   const carValueId = parseInt(req.params.id);
   const matchedCarValue = carValueService.getCarValueById(carValueId);
 
@@ -23,7 +24,7 @@ exports.getCarValueById = (req, res) => {
   res.send(matchedCarValue);
 };
 
-exports.calculateCarValue = (req, res) => {
+export const calculateCarValue = (req: Request, res: Response) => {
   const model = req.body.model;
   const year = req.body.year;
 

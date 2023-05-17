@@ -1,8 +1,10 @@
-const express = require("express");
-const router = express.Router();
-const carValueController = require("../controllers/carValueController");
+import express from "express";
+import { Request, Response } from "express";
+import * as carValueController from "../controllers/carValueController";
 
-router.get("/", (req, res) => {
+const router = express.Router();
+
+router.get("/", (req: Request, res: Response) => {
   res.send("Welcome to the car value generator!");
 });
 
@@ -14,4 +16,4 @@ router.get("/carValues/:id", carValueController.getCarValueById);
 
 router.post("/carValue", carValueController.calculateCarValue);
 
-module.exports = router;
+export default router;
