@@ -1,39 +1,50 @@
-const express = require('express');   // importing dependencies 
-const dotenv = require('dotenv');    // importing dependencies 
-// const cors = require('cors') // importing dependencies 
-const app = express();            
+const fs=require("fs/promises");
+const express = require("express");
+//const cors = require("cors"); //if encoutering errors whne using from the front end, remove comment status //didn't require it so far
 
-dotenv.config(); //loading any variables from the .env
+const app= express()
+app.use(express.json());
+//app.use(express.cors());  //if encoutering errors whne using from the front end, remove comment status s //didn't require it so far
 
-const port = process.env.PORT || 3000; //listen up kids, right now the PORT is set to 3000, tomorrow, the world...but that's only if the .env doesnt have some other port...
+if (require.main === module) {
+  app.listen(3000, () => console.log('p3 server is running'));
+}
 
-
-app.use(express.json()); //enabling parsing of JSON data for the request bodu
-// app.use(express.cors());  //enable cors Cors package, to try to avoid issues when callign from a frond end react
-
-app.post('/calculateQuote',  (req, res) => {              
-  const { car_value, risk_rating } = req.body;
-
+function calculateQuote(car_value, risk_rating) {
+  //Validation can be either in the function or the GET method, depends on how 
+  // it is going to be accessed, I'm leaving the one in the GET metho commented. 
+  //Altough I prefer to have it there even tough it makes no sense at all
   if (!car_value || !risk_rating) {
-    return res.status(400).json({ error: 'Invalid input. Make sure both fields are completed and use numbers only (do not use 0' });
-    //should add more to make sure the values inserted are the right type of data
+    return {error:'Invalid input. Please input all fields'};
+  } else if (car_value <= 0 || risk_rating <= 0) {
+    return {error:'Invalid input. The values cannot be negative or zero'};    
+  } else if (typeof car_value !== 'number' || typeof risk_rating !== 'number') {
+    return {error:'Invalid input. Make sure both fields are numbers only'};
   }
+  const yearly_quote = parseFloat((car_value * risk_rating / 100).toFixed(2));
+  const monthly_quote = parseFloat((yearly_quote / 12).toFixed(2));
+  return { monthly_quote, yearly_quote };
+}
 
-  const yearly_quote = car_value * risk_rating / 100;
-  const monthly_quote = yearly_quote / 12;
+app.get("/calculateQuote", (req, res) =>{
+      const { car_value, risk_rating } = req.body;
+      // if (!car_value || !risk_rating) {
+      //   return res.status(400).json({ 
+      //     error: 'Invalid input. Please input all fields' 
+      //   });
+      // } else if (car_value < 0 || car_value === 0 || risk_rating < 0 || risk_rating === 0) {
+      //   return res.status(400).json({ 
+      //     error: 'Invalid input. The values cannot be negative nor zero' 
+      //   });
+      // } else if (typeof car_value !== 'number' || typeof risk_rating !== 'number') {
+      //   return res.status(400).json({ 
+      //     error: 'Invalid input. Make sure both fields are numbers only' 
+      //   });
+      // }  
+  
+  const quotes = calculateQuote(car_value, risk_rating);
 
-  res.json({ monthly_quote, yearly_quote });
+  res.json(quotes);
 });
-//Handling the POST request of the http to the endpoint, retrieving two inputs (the car value nad the risk rating) 
-//checking that the values are actually there, if not throwing an error message
-//
 
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-});
-//starting the server and listening to whatever port was asssigned 
-//(initially 3000 because reasons) and console logging just to check
-
-
-
-// module.exports= './calculateQuote'
+module.exports ={ app, calculateQuote };
