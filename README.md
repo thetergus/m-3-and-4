@@ -173,12 +173,12 @@ The purpose of this project is to apply an Agile practice of Test-Driven Develop
 
 ---
 
-### **Contributors & our Contact:**
+### **Contributors & our Contacts:**
 
 - Tergus de Leon Alves - <tergusdla@missionreadyhq.com>
 - Heni Kimura - <henace86@gmail.com>
 
-### **Reviewers**
+### **Reviewers:**
 
 - Jonathan Padoa - <jonathanp@missionreadyhq.com>
 - Wilhelmus Duncker - <wilhelmusd@missionreadyhq.com>
@@ -191,7 +191,7 @@ The purpose of this project is to apply an Agile practice of Test-Driven Develop
 
 Distributed under the MIT License. See LICENSE.txt for more information.
 
-### **Acknowledgments**
+### **Acknowledgments:**
 
 - [Fireship](https://youtu.be/Jv2uxzhPFl4 "Fireship")
 - [Digitalonus](https://www.digitalonus.com/getting-started-with-api-test-automation-using-javascript/ "Digitalonus")
