@@ -36,30 +36,39 @@ const CarValueCalculator = () => {
 
   return (
     <div>
-      <h1>Car Value Calculator</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
+      <h1 style={{ marginTop: "50px", fontSize: "48px" }}>
+        Car Value Generator
+      </h1>
+      <form onSubmit={handleSubmit} style={{ marginTop: "50px" }}>
+        <label style={{ margin: "20px", fontSize: "24px" }}>
           Model:
           <input
             type="text"
             value={model}
             onChange={(event) => setModel(event.target.value)}
+            style={{ margin: "20px", fontSize: "24px" }}
           />
         </label>
         <br />
-        <label>
+        <label style={{ margin: "20px", fontSize: "24px" }}>
           Year:
           <input
             type="number"
             value={year}
             onChange={(event) => setYear(event.target.value)}
+            style={{ margin: "20px", fontSize: "24px" }}
           />
         </label>
         <br />
-        <button type="submit">Calculate</button>
+        <button
+          type="submit"
+          style={{ margin: "20px", padding: "10px", fontSize: "24px" }}
+        >
+          Generate
+        </button>
       </form>
       {error && <p style={{ color: "red" }}>{error}</p>}
-      {carValue && <p>Car Value: ${carValue}</p>}
+      {carValue && <p style={{ fontSize: "24px" }}>Car Value: ${carValue}</p>}
     </div>
   );
 };
