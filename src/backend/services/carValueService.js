@@ -25,9 +25,11 @@ exports.calculateCarValue = (model, year) => {
   let carValue = 0;
   for (let i = 0; i < model.length; i++) {
     const char = model.charAt(i).toLowerCase();
-    const index = alphabet.indexOf(char);
-    if (index !== -1) {
+    if (char >= "a" && char <= "z") {
+      const index = alphabet.indexOf(char);
       carValue += index + 1;
+    } else if (char >= "0" && char <= "9") {
+      carValue += parseInt(char);
     }
   }
   carValue = carValue * 100 + year;

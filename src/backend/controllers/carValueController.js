@@ -17,7 +17,7 @@ exports.getCarValueById = (req, res) => {
   const matchedCarValue = carValueService.getCarValueById(carValueId);
 
   if (!matchedCarValue) {
-    res.status(404).send("Car value not found");
+    res.status(404).send("Sorry can't seem to generate a car value");
   }
 
   res.send(matchedCarValue);
@@ -28,7 +28,9 @@ exports.calculateCarValue = (req, res) => {
   const year = req.body.year;
 
   if (!model || !year) {
-    res.status(400).json({ error: "Invalid input values" });
+    res.status(400).json({
+      error: "Sorry something went wrong! Have you filled both fields?",
+    });
     return;
   }
 
