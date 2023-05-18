@@ -9,9 +9,9 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
+server.use("/", carRoutes);
+
 const PORT = process.env.PORT;
 server.listen(PORT, () => {
   console.log(`Server started on ${PORT}`);
 });
-
-server.use("/", carRoutes);
