@@ -175,7 +175,7 @@ The purpose of this project is to apply an Agile practice of Test-Driven Develop
 
 ### **Contributors & our Contacts:**
 
-- Tergus de Leon Alves - <tergusdla@missionreadyhq.com>
+- Tergus de Leon Alvez - <tergusdla@missionreadyhq.com>
 - Heni Kimura - <henace86@gmail.com>
 
 ### **Contributor Reviews:**

@@ -1,6 +1,4 @@
-import { CarValueInfo } from "../types/carValueInfo";
-
-let carValues: CarValueInfo[] = [];
+import { CarValueInfo, carValues } from "../types/carValueInfo";
 
 export const getCarValues = (): CarValueInfo[] => {
   return carValues;
