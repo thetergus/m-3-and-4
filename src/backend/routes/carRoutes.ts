@@ -4,7 +4,7 @@ import * as carValueController from "../controllers/carValueController";
 
 const router = express.Router();
 
-router.get("/", (req: Request, res: Response) => {
+router.get("/", (_req: Request, res: Response) => {
   res.send("Welcome to the car value generator!");
 });
 
