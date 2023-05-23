@@ -62,8 +62,6 @@ The purpose of this project is to apply an Agile practice of Test-Driven Develop
 
 ### **Built with:**
 
-- [React.js](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo-react&logoColor=61DAFB "Reactjs")
-- [React-url](https://reactjs.org/ "Reacturl")
 - [Node.js](https://img.shields.io/badge/Node-20232A?style=for-the-badge&logo-note&logoColor=61DAFB "Nodejs")
 - [Nodejs-url](https://nodejs.org/en "Nodejsurl")
 - [Typescript](https://img.shields.io/badge/Typescript-20232A?style=for-the-badge&logo-typescript&logoColor=CF649A "Typescript")
@@ -95,12 +93,6 @@ The purpose of this project is to apply an Agile practice of Test-Driven Develop
   npm i dotenv
   ```
 
-- Cors
-
-  ```sh
-  npm i cors
-  ```
-
 - _Dev-Dependencies:_
 
 - Typescript
@@ -129,18 +121,6 @@ The purpose of this project is to apply an Agile practice of Test-Driven Develop
   npm i --save-dev supertest
   ```
 
-- Cors
-
-  ```sh
-  npm i --save-dev @types/cors
-  ```
-
-- Nodemon
-
-  ```sh
-  npm i -D nodemon
-  ```
-
 ---
 
 ### Installation
@@ -167,7 +147,6 @@ The purpose of this project is to apply an Agile practice of Test-Driven Develop
 
 ### **Future improvements:**
 
-- Continue to configure javascript to typescript
 - Improve refactoring
 - Improve on code smells after peer reviews
 
