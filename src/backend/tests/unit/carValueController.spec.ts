@@ -1,11 +1,9 @@
 import request from "supertest";
-import { server, app } from "../../server";
+// import { Server } from "http";
+import app from "../../app";
 import * as carValueService from "../../services/carValueService";
 
 describe("GET /carValues", () => {
-  afterAll((done) => {
-    app.close(done);
-  });
   test("should respond with error if array not received", async () => {
     // Arrange
     jest.spyOn(carValueService, "getCarValues").mockImplementation(() => {
@@ -13,7 +11,7 @@ describe("GET /carValues", () => {
     });
 
     // Act
-    const response = await request(server).get("/carValues");
+    const response = await request(app).get("/carValues");
 
     // Assert
     expect(response.statusCode).toBe(500);
@@ -28,7 +26,7 @@ describe("should create an id for the car info model and year", () => {
     });
 
     // Act
-    const response = await request(server).get("/carValues");
+    const response = await request(app).get("/carValues");
 
     // Assert
     expect(response.statusCode).toBe(500);
@@ -43,7 +41,7 @@ describe("should get the car info using assigned id", () => {
     });
 
     // Act
-    const response = await request(server).get("/carValues/:id");
+    const response = await request(app).get("/carValues/:id");
 
     // Assert
     expect(response.statusCode).toBe(500);
@@ -60,7 +58,7 @@ describe("should get calculated car value using id", () => {
       });
 
     // Act
-    const response = await request(server).get("/carValues/:id/calculate");
+    const response = await request(app).get("/carValues/:id/calculate");
 
     // Assert
     expect(response.statusCode).toBe(500);
@@ -76,7 +74,7 @@ describe("POST /carValue", () => {
         .mockReturnValue({ error: "An error occurred" });
 
       // Act
-      const response = await request(server).post("/carValue");
+      const response = await request(app).post("/carValue");
 
       // Assert
       expect(response.statusCode).toBe(400);
@@ -96,7 +94,7 @@ describe("POST /calculateCarValueIgnoringNumbers", () => {
         .mockReturnValue(NaN);
 
       // Act
-      const response = await request(server).post("/carValue");
+      const response = await request(app).post("/carValue");
 
       // Assert
       expect(response.statusCode).toBe(400);
