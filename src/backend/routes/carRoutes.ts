@@ -1,10 +1,10 @@
 import express from "express";
-import { Request, Response } from "express";
+import { Response } from "express";
 import * as carValueController from "../controllers/carValueController";
 
 const router = express.Router();
 
-router.get("/", (req: Request, res: Response) => {
+router.get("/", (res: Response) => {
   res.send("Welcome to the car value generator!");
 });
 

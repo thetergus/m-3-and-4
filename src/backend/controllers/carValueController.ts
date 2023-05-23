@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import * as carValueService from "../services/carValueService";
 
-export const getCarValues = (req: Request, res: Response) => {
+export const getCarValues = (res: Response) => {
   try {
     const carValues = carValueService.getCarValues();
     res.send(carValues);
