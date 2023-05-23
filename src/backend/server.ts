@@ -3,7 +3,7 @@ import cors from "cors";
 import env from "dotenv";
 import { Server } from "http";
 import carRoutes from "./routes/carRoutes";
-
+import carInsuranceQuote from "./routes/carInsuranceRoutes"
 
 env.config();
 
