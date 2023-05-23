@@ -95,12 +95,6 @@ The purpose of this project is to apply an Agile practice of Test-Driven Develop
   npm i dotenv
   ```
 
-- Cors
-
-  ```sh
-  npm i cors
-  ```
-
 - _Dev-Dependencies:_
 
 - Typescript
@@ -129,18 +123,6 @@ The purpose of this project is to apply an Agile practice of Test-Driven Develop
   npm i --save-dev supertest
   ```
 
-- Cors
-
-  ```sh
-  npm i --save-dev @types/cors
-  ```
-
-- Nodemon
-
-  ```sh
-  npm i -D nodemon
-  ```
-
 ---
 
 ### Installation
@@ -167,7 +149,6 @@ The purpose of this project is to apply an Agile practice of Test-Driven Develop
 
 ### **Future improvements:**
 
-- Continue to configure javascript to typescript
 - Improve refactoring
 - Improve on code smells after peer reviews
 
@@ -175,7 +156,7 @@ The purpose of this project is to apply an Agile practice of Test-Driven Develop
 
 ### **Contributors & our Contacts:**
 
-- Tergus de Leon Alves - <tergusdla@missionreadyhq.com>
+- Tergus de Leon Alvez - <tergusdla@missionreadyhq.com>
 - Heni Kimura - <henace86@gmail.com>
 
 ### **Contributor Reviews:**
