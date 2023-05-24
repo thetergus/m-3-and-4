@@ -2,11 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "resting api",
-  "main": "server.js",
+  "main": "server.ts",
   "scripts": {
     "start": "npm run build && node build/server.js",
-    "local": "tsnd src/backend/server.ts",
-    "test": "jest --detectOpenHandles"
+    "test": "jest --detectOpenHandles",
+    "build": "tsc"
   },
   "author": "Heni Kimura",
   "license": "ISC",
@@ -25,6 +25,7 @@
     "supertest": "^6.3.3",
     "ts-jest": "^29.1.0",
     "ts-node-dev": "^2.0.0",
+    "tsc": "^2.0.4",
     "typescript": "^5.0.4"
   }
 }
