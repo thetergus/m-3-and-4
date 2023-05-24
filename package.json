@@ -4,6 +4,7 @@
   "description": "resting api",
   "main": "server.js",
   "scripts": {
+    "start": "npm run build && node build/server.js",
     "local": "tsnd src/backend/server.ts",
     "test": "jest --detectOpenHandles"
   },
