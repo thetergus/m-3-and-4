@@ -1,9 +1,9 @@
-name: Build and Test
+name: Car Isurance Premium API Build and Test
 
 on:
   push:
       branches: 
-        - feature/*
+        - main
 
 env:
     PROJECT_ID: class-demo-387715 # TODO: update Google Cloud project id
