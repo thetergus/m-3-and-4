@@ -4,7 +4,7 @@
   "description": "resting api",
   "main": "server.ts",
   "scripts": {
-    "start": "node src/backend/build/server.js",
+    "start": "node build/server.js",
     "test": "jest --detectOpenHandles",
     "build": "tsc"
   },
