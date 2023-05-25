@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.post('/calculateQuote', createQuote);
 
-router.get("/QuoteByID/:id", getCarQuote);
+router.post("/QuoteByID/id:", getCarQuote);
 
 export default router;
