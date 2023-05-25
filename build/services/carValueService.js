@@ -1,23 +1,64 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.calculateCarValueIgnoringNumbers = exports.calculateCarValueById = exports.calculateCarValue = exports.getCarValueById = exports.createCarValue = exports.getCarValues = void 0;
-const carValueInfo_1 = require("../types/carValueInfo");
+let carValues = [
+    {
+        id: 1,
+        model: "civic",
+        year: 2014,
+    },
+    {
+        id: 2,
+        model: "accord",
+        year: 2015,
+    },
+    {
+        id: 3,
+        model: "sonata",
+        year: 2013,
+    },
+    {
+        id: 4,
+        model: "camry",
+        year: 2011,
+    },
+    {
+        id: 5,
+        model: "model 3",
+        year: 2022,
+    },
+    {
+        id: 6,
+        model: "911",
+        year: 2020,
+    },
+    {
+        id: 7,
+        model: "altima*",
+        year: 2019,
+    },
+    {
+        id: 8,
+        model: "a4",
+        year: 2018,
+    },
+];
 const getCarValues = () => {
-    return carValueInfo_1.carValues;
+    return carValues;
 };
 exports.getCarValues = getCarValues;
 const createCarValue = (model, year) => {
     const newCarValue = {
-        id: carValueInfo_1.carValues.length + 1,
+        id: carValues.length + 1,
         model,
         year,
     };
-    carValueInfo_1.carValues.push(newCarValue);
+    carValues.push(newCarValue);
     return newCarValue;
 };
 exports.createCarValue = createCarValue;
 const getCarValueById = (carValueId) => {
-    return carValueInfo_1.carValues.find((t) => t.id === carValueId);
+    return carValues.find((t) => t.id === carValueId);
 };
 exports.getCarValueById = getCarValueById;
 const calculateCarValue = (model, year) => {
