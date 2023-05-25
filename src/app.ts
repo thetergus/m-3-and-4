@@ -1,6 +1,6 @@
 import express from "express";
 import carRoutes from "./routes/carRoutes";
-import calculateQuote from "./routes/carInsuranceRoutes";
+import calculateQuote from "./routes/carQuoteRoutes";
 
 const app = express();
 app.use(express.json());
