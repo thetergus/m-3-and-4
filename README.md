@@ -119,7 +119,7 @@ The purpose of this project is to apply an Agile practice, building APIs designe
   npx ts-jest config:init
   ```
 
-  - Typescript build compiler
+- Typescript build compiler
 
   ```sh
   tsc --init
@@ -176,7 +176,7 @@ The purpose of this project is to apply an Agile practice, building APIs designe
 ### **Contributors & our Contacts:**
 
 - Tergus de Leon Alvez - <tergusdla@missionreadyhq.com>
-- Heni Kimura - <henace86@gmail.com>
+- Heni Kimura - <henik@missionreadyhq.com>
 
 ### **Contributor Reviews:**
 
