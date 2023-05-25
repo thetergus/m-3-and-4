@@ -26,8 +26,17 @@ export const getCarQuotes = (): CarQuotesInfo[] => { // Gets array of arrays (id
   return carQuotes;
 };
 
-export const getCarQuoteByID = ( // Gets a Quote from the carQuote array by their id
-  carQuoteId: number
-): CarQuotesInfo | undefined => {
-  return carQuotes.find((t) => t.id === carQuoteId);
+// export const getCarQuoteByID = ( // Gets a Quote from the carQuote array by their id
+//   carQuoteId: number
+// ): CarQuotesInfo | undefined => {
+//   return carQuotes.find((t) => t.id === carQuoteId);
+// };
+
+export const getCarQuoteByID = (carQuoteId: number): Partial<CarQuotesInfo> | undefined => {
+  const carQuote = carQuotes.find((t) => t.id === carQuoteId);
+  if (carQuote) {
+    const { id, monthly, yearly } = carQuote;
+    return { id, monthly, yearly };
+  }
+  return undefined;
 };
